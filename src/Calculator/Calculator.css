@@ -1,0 +1,29 @@
+#App {
+    /* reset margin and padding */
+    margin: 0;
+    padding: 0;
+
+    /* occupy the viewport */
+    width: 100vw;
+    height: 100vh;
+
+    /* center the calculator */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Calculator {
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    
+    text-align: center;
+    background-color: gray;
+}
+
+@media screen and (max-width: 450px) {
+    #Calculator {
+        width: 100%;
+    }
+}
