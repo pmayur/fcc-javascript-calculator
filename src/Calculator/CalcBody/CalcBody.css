@@ -1,4 +1,18 @@
 #CalcBody {
     height: 75%;
     width: 100%;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+#num-pad {
+    grid-column: 1/4;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#op-pad {
+    display: grid;
 }
