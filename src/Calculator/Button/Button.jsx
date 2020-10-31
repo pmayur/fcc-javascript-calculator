@@ -1,14 +1,22 @@
 import React from "react";
 import "./Button.css";
 
-class Button extends React.Component {
-    render() {
-        return (
-            <div className="Button" id={this.props.id}>
-                {this.props.buttonText}
-            </div>
-        );
-    }
+import { useDispatch } from "react-redux";
+import { changeValue } from "../../actions";
+import { PADTYPE } from '../../utilities'
+
+function Button(props) {
+    const dispatch = useDispatch();
+
+    return (
+        <div
+            className="Button"
+            id={props.id}
+            onClick={() => dispatch(changeValue(props.buttonText))}
+        >
+            {props.buttonText}
+        </div>
+    );
 }
 
 export default Button;

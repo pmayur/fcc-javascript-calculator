@@ -14,6 +14,9 @@
 
 #input {
     grid-column: 1 / span 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 #clearSection {
