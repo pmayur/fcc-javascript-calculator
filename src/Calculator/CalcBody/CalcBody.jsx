@@ -4,61 +4,37 @@ import "./CalcBody.css";
 
 import Button from "../Button/Button";
 
-class CalcBody extends React.Component {
-    constructor(props) {
-        super();
+import { numButtons, opButtons, PADTYPE } from "../../utilities";
 
-        this.state = {
-            numButtons: {
-                seven: "7",
-                eight: "8",
-                nine: "9",
-
-                four: "4",
-                five: "5",
-                six: "6",
-
-                one: "1",
-                two: "2",
-                three: "3",
-
-                zero: "0",
-                decimal: ".",
-                equals: "=",
-            },
-
-            opButtons: {
-                multiply: "*",
-                divide: "/",
-                subtract: "-",
-                add: "+",
-            },
-        };
-    }
-
-    render() {
-
-        
-
-        let numButtons = Object.keys(this.state.numButtons).map( (key) => {
-            return <Button id={key} buttonText={this.state.numButtons[key]} />
-        });
-
-        let opButtons = Object.keys(this.state.opButtons).map( (key) => {
-            return <Button id={key} buttonText={this.state.opButtons[key]} />
-        });
-
+function CalcBody() {
+    let numButtonsArray = Object.keys(numButtons).map((key) => {
         return (
-            <div id="CalcBody">
-                <div id="num-pad">
-                    {numButtons}
-                </div>
-                <div id="op-pad">
-                    {opButtons}
-                </div>
-            </div>
+            <Button
+                id={key}
+                key={key}
+                buttonText={numButtons[key]}
+                padtype={PADTYPE.NUMPAD}
+            />
         );
-    }
+    });
+
+    let opButtonsArray = Object.keys(opButtons).map((key) => {
+        return (
+            <Button
+                id={key}
+                key={key}
+                buttonText={opButtons[key]}
+                padtype={PADTYPE.OPPAD}
+            />
+        );
+    });
+
+    return (
+        <div id="CalcBody">
+            <div id="num-pad">{numButtonsArray}</div>
+            <div id="op-pad">{opButtonsArray}</div>
+        </div>
+    );
 }
 
 export default CalcBody;
