@@ -1,20 +1,33 @@
+import changeValue from "./changeValue";
+import changeOperator from "./changeOperator";
+import compute from "./compute";
+
 const initialState = {
     equation: "",
     operator: "",
+    secondary: "",
     value: "0",
+    total: "",
 };
-export const valueReducer = (state = initialState, action) => {
+
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "CHANGE_VALUE": {
-            let val = state.value;
-            if (eval(val) == 0) {
-                val = action.value;
-            } else {
-                val = val.concat(action.value);
-            }
-
-            return Object.assign({}, state, { value: val });
+            return changeValue(state, action);
         }
+
+        case "CHANGE_OPERATOR": {
+            return changeOperator(state, action);
+        }
+
+        case "COMPUTE": {
+            return compute(state, action, initialState);
+        }
+
+        case "CLEAR": {
+            return initialState;
+        }
+
         default: {
             return state;
         }
