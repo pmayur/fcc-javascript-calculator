@@ -8,12 +8,15 @@ import { numButtons, opButtons, PADTYPE } from "../../utilities";
 
 function CalcBody() {
     let numButtonsArray = Object.keys(numButtons).map((key) => {
+
+        let padtype = key === "equals" ? PADTYPE.EQUALSBUTTON : PADTYPE.NUMPAD;
+
         return (
             <Button
                 id={key}
                 key={key}
                 buttonText={numButtons[key]}
-                padtype={PADTYPE.NUMPAD}
+                padtype={padtype}
             />
         );
     });
