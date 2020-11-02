@@ -25,5 +25,6 @@ export const opButtons = {
 
 export const PADTYPE = {
     NUMPAD: 'NUMPAD',
-    OPPAD: 'OPPAD'
+    OPPAD: 'OPPAD',
+    EQUALSBUTTON: 'EQUALSBUTTON'
 }
