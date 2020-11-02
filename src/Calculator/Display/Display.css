@@ -1,4 +1,4 @@
-#display {
+#displayPad {
     height: 25%;
     width: 100%;
     
@@ -6,13 +6,17 @@
 }
 
 #total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
 }
 
 #equation {
     display: grid;
 }
 
-#input {
+#display {
     grid-column: 1 / span 5;
     display: flex;
     justify-content: flex-end;
