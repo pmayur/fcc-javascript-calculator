@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Calculator from "./Calculator/Calculator.jsx";
 
-import { valueReducer } from "./reducers";
+import { reducer } from "./reducers";
+
 import { Provider } from "react-redux";
 
 import { createStore } from "redux";
 
-const store = createStore(valueReducer);
+const store = createStore(reducer);
 
 ReactDOM.render(
     <React.StrictMode>
