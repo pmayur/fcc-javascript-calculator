@@ -1,29 +1,44 @@
 #App {
-    /* reset margin and padding */
     margin: 0;
     padding: 0;
 
-    /* occupy the viewport */
     width: 100vw;
     height: 100vh;
 
-    /* center the calculator */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: rgb(52,148,151);
+    background: linear-gradient(0deg, rgba(52,148,151,1) 0%, rgba(50,175,215,1) 60%);
 }
 
 #Calculator {
     margin: auto;
     width: 400px;
-    height: 500px;
-    
+    height: 700px;
+
     text-align: center;
-    background-color: gray;
+    background-color: #1D404C;
+
+    box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.4);
+
+    display: grid;
+    grid-template-rows: 40% 60%;
+
+    font-size: 20px;
+    color: #F3F5F5;
 }
 
+
 @media screen and (max-width: 450px) {
+    #App {
+        align-items: initial;
+    }
     #Calculator {
+        height: 100%;
         width: 100%;
+        box-shadow: 18px 9px 18px 0 rgba(0.4, 0, 0, 0.4);
+
     }
 }

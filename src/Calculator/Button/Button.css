@@ -1,8 +1,10 @@
 .Button {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-
+    border: 1px solid rgb(61, 107, 114, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Button:hover {
+    border: 1px solid rgb(61, 107, 114, 0.5);
 }

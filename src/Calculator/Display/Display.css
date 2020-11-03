@@ -1,44 +1,49 @@
 #displayPad {
-    height: 25%;
+    height: 100%;
     width: 100%;
-    
     display: grid;
+    grid-template-rows: 60% 40%;
 }
 
 #total {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 25px;
 }
 
 #equation {
+    width: 100%;
     display: grid;
+    grid-template-columns: 75% 25%;
 }
 
 #display {
-    grid-column: 1 / span 5;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    font-size: 30px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 #clearSection {
-    grid-column: 6;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    margin-right: 5px;
-}
-#clear {
-    height: 60%;
-    width: 60%;
-
-    
-    border: 1px solid black;
-    border-radius: 50%;
-
-    display: flex;
     justify-content: center;
+}
+
+#clear {
+    background-color: rgb(87, 236, 243);
+    color: rgb(28, 72, 83);
+    border-radius: 50% 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+#clear:hover {
+    border: 1px solid rgb(61, 107, 114, 0.5);
 }

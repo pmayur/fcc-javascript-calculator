@@ -1,18 +1,20 @@
 #CalcBody {
-    height: 75%;
+    height: 100%;
     width: 100%;
-
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 
 #num-pad {
     grid-column: 1/4;
-
     display: grid;
     grid-template-columns: auto auto auto;
+    border: 1px solid rgb(61,107,114, 0.1);
+
 }
 
 #op-pad {
     display: grid;
+    color: #4ED6DF;
+    border: 1px solid rgb(61,107,114, 0.1);
 }
