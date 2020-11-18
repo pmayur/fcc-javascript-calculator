@@ -1,13 +1,16 @@
 export default function changeOperator(state, action) {
-    let equation = state.equation;
-    let operator = state.operator;
-    let secondary = state.secondary;
-    let value = state.value;
-    let total = state.total;
+    let equation    = state.equation;
+    let operator    = state.operator;
+    let secondary   = state.secondary;
+    let value       = state.value;
+    let total       = state.total;
 
     // handles case for first operator
     if (operator === "" && secondary === "") {
         if (total !== "") {
+            if(total === "Limit Exceeded") {
+                total = 0
+            }
             equation = "".concat(total);
             total = "";
             value = "0";

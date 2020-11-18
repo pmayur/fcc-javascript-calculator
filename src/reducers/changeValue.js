@@ -1,21 +1,25 @@
 export default function changeValue(state, action) {
-    let equation = state.equation;
-    let operator = state.operator;
-    let secondary = state.secondary;
-    let value = state.value;
-    let total = state.total;
+    let equation    = state.equation;
+    let operator    = state.operator;
+    let secondary   = state.secondary;
+    let value       = state.value;
+    let total       = state.total;
 
-    if (total !== "") {
-        equation = "";
-        total = "";
-        value = "0";
+    if (total !== "" || total === "Limit Exceeded") {
+        equation    = "";
+        total       = "";
+        value       = "0";
+    }
+
+    if (value.length > 10) {
+        return state;
     }
 
     if (value !== "") {
-        equation = equation.concat(" " + operator + " ");
-        equation = equation.concat(secondary + " ");
-        operator = "";
-        secondary = "";
+        equation    = equation.concat(" " + operator + " ");
+        equation    = equation.concat(secondary + " ");
+        operator    = "";
+        secondary   = "";
     }
 
     switch (action.value) {

@@ -1,18 +1,22 @@
 export default function compute(state, action, initialState) {
-    let equation = state.equation;
-    let operator = state.operator;
-    let secondary = state.secondary;
-    let value = state.value;
-    let total = state.total;
+    let equation    = state.equation;
+    let operator    = state.operator;
+    let secondary   = state.secondary;
+    let value       = state.value;
+    let total       = state.total;
 
     equation = equation.concat(operator);
     equation = equation.concat(secondary);
     equation = equation.concat(value);
+    
+    total    = eval(equation);
 
-    total = eval(equation);
+    if((total+"").length > 16) {
+        total = "Limit Exceeded"
+    }
 
-    equation = equation.concat(" = " + total);
-    value = "".concat(total);
+    equation    = equation.concat(" = " + total);
+    value       = "".concat(total);
 
     state = initialState;
 
